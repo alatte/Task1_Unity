@@ -323,15 +323,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2f2c26e0af37948aa60ebbd0a47978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ground: {fileID: 5216540259549607658, guid: 16edae31f3bbf194e9b3c51adc95d343, type: 3}
-  Obstacle: {fileID: 6771819569800482133, guid: 1aaf13f8790e2b2428fb931636d02e50,
+  ground: {fileID: 5216540259549607658, guid: 16edae31f3bbf194e9b3c51adc95d343, type: 3}
+  obstacle: {fileID: 6771819569800482133, guid: 1aaf13f8790e2b2428fb931636d02e50,
     type: 3}
-  Border: {fileID: 6757941412279238560, guid: e318c3ff9c49fb94a8d0936acce31f40, type: 3}
-  Player: {fileID: 5552654621946431154, guid: ab33d934a72fab84582aca1fba35e875, type: 3}
-  Enemy: {fileID: 6690156616300265783, guid: f3b44a223f2d828468d0040b95d106f8, type: 3}
-  Height: 11
-  Width: 11
-  NumberOfEnemies: 2
+  border: {fileID: 6757941412279238560, guid: e318c3ff9c49fb94a8d0936acce31f40, type: 3}
+  player: {fileID: 5552654621946431154, guid: ab33d934a72fab84582aca1fba35e875, type: 3}
+  enemy: {fileID: 6690156616300265783, guid: f3b44a223f2d828468d0040b95d106f8, type: 3}
+  height: 11
+  width: 11
+  numberOfEnemies: 2
 --- !u!4 &2097746322
 Transform:
   m_ObjectHideFlags: 0

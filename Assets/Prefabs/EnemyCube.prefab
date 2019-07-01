@@ -122,8 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b82c185c2183d43a659e42fb796e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDistance: 10
   enemyLookDistance: 5
-  attackDistance: 0
-  enemyMovementSpeed: 0
-  damping: 0
+  attackDistance: 5
+  speed: 5
+  damping: 10

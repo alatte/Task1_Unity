@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    //public float Speed;
-    //private Transform Target;
-
-
     public float enemyLookDistance;
+    public float attackDistance;
     public float speed;
     public float damping;
 
@@ -30,15 +27,20 @@ public class EnemyScript : MonoBehaviour
             lookAtPlayer();
         }
 
-        /*target = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 direction = target.position - transform.position;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 10 * Time.deltaTime);
-        transform.position += transform.forward * Speed * Time.deltaTime;*/
+        if (targetDistance < attackDistance)
+        {
+            attackPlease();
+        }
     }
 
     void lookAtPlayer()
     {
         Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime + damping);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime*damping);
+    }
+
+    void attackPlease()
+    {
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 }
