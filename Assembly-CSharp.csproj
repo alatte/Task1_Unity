@@ -60,9 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AbstractEnemy.cs" />
     <Compile Include="Assets\EnemyScript.cs" />
+    <Compile Include="Assets\GameControllerScript.cs" />
+    <Compile Include="Assets\HealthControllerScript.cs" />
     <Compile Include="Assets\MapScript.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\ShooterScript.cs" />
+    <Compile Include="Assets\ShotScript.cs" />
+    <Compile Include="Assets\SpawnPointScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/UnityProjects/Task1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

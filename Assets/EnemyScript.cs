@@ -2,45 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : AbstractEnemy
 {
-    public float enemyLookDistance;
-    public float attackDistance;
-    public float speed;
-    public float damping;
-
-    Transform target;
-    Rigidbody rigidbody;
-    float targetDistance;
-
-    private void Start()
+    void OnCollisionEnter(Collision collisionObject)
     {
-        rigidbody = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        targetDistance = Vector3.Distance(target.position, transform.position);
-        if (targetDistance < enemyLookDistance)
+        if (collisionObject.gameObject.tag == "Player")
         {
-            lookAtPlayer();
-        }
-
-        if (targetDistance < attackDistance)
-        {
-            attackPlease();
+            target.GetComponent<PlayerScript>().LoseHealth();
         }
     }
 
-    void lookAtPlayer()
-    {
-        Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime*damping);
-    }
-
-    void attackPlease()
-    {
-        transform.position += transform.forward * speed * Time.deltaTime;
-    }
+    protected override void Attack() { }
 }
