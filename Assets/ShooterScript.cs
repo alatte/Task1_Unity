@@ -14,7 +14,7 @@ public class ShooterScript : AbstractEnemy
         if (Time.time > nextShot)
         {
             nextShot = Time.time + shotDelay;
-            Instantiate(shot, transform.Find("ImagineGun").gameObject.transform.position, transform.rotation);
+            Instantiate(shot, transform.Find("ImagineGun").gameObject.transform.position, Quaternion.identity);
         }
     }
 }
