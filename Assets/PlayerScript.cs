@@ -8,20 +8,16 @@ public class PlayerScript : MonoBehaviour
     public int health;
 
     private HealthControllerScript healthController;
+
+    public bool isInvincible = false;
+    public Color playerColor;
+
     private void Start()
     {
         healthController = GameObject.FindGameObjectWithTag("HealthController").GetComponent<HealthControllerScript>();
+        playerColor = GetComponent<Renderer>().material.color;
         StartCoroutine(CoroutineIsteadUpdate());
     }
-
-    /*void Update()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Rigidbody player = GetComponent<Rigidbody>();
-        player.velocity = new Vector3(moveHorizontal, 0, moveVertical) * speed;
-    }*/
 
     IEnumerator CoroutineIsteadUpdate()
     {
@@ -37,8 +33,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void LoseHealth()
+    public void ChangeHealth(int points)
     {
-        healthController.WriteHealth(--health);
+        if (points < 0 && !isInvincible)
+            health += points;
+        else if (points > 0)
+            health += points;
+
+        if (health > 100) health = 100;
+        healthController.WriteHealth(health);
     }
 }

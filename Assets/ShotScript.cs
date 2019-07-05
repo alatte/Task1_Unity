@@ -17,7 +17,7 @@ public class ShotScript : MonoBehaviour
         else if (other.tag == "Player")
         {
             Destroy(gameObject);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().LoseHealth();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().ChangeHealth(-1);
         }
     }
 }

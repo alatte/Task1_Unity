@@ -8,6 +8,6 @@ public class HealthControllerScript : MonoBehaviour
 
     public void WriteHealth(int health)
     {
-        healthText.GetComponent<UnityEngine.UI.Text>().text = "Health:" + health;
+        healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + health;
     }
 }

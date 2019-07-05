@@ -11,11 +11,13 @@ public class SpawnPointScript : MonoBehaviour
     private int height;
     private int width;
     private int numberOfEnemies;
+    private BonusSpawnerScript bonusSpawnerScript;
 
     private GameObject player;
     
     public void Start()
     {
+        bonusSpawnerScript = GetComponent<BonusSpawnerScript>();
         numberOfEnemies = PlayerPrefs.GetInt("numberOfEnemies");
         height = PlayerPrefs.GetInt("height");
         width = PlayerPrefs.GetInt("width");
@@ -30,19 +32,15 @@ public class SpawnPointScript : MonoBehaviour
     void CreatePlayer()
     {
         player = Instantiate(playerPrefab, GetPlayerSpawnPoint(), Quaternion.identity);
+        bonusSpawnerScript.SetTarget(player);
     }
 
     void CreateEnemies()
     {
-        int numberOfShooters = Mathf.FloorToInt(numberOfEnemies / 2);
-        for (int i = 0; i < numberOfEnemies - numberOfShooters; i++)
+        for (int i = 0; i < numberOfEnemies; i++)
         {
             Instantiate(enemyPrefab, GetEnemySpawnPoint(), Quaternion.identity).GetComponent<EnemyScript>().SetTarget(player);
-        }
-        for (int i = 0; i < numberOfShooters; i++)
-        {
-            Instantiate(shooterPrefab, GetEnemySpawnPoint(), Quaternion.identity).GetComponent<ShooterScript>().SetTarget(player);
-        }
+        }        
     }
 
     Vector3 GetPlayerSpawnPoint()

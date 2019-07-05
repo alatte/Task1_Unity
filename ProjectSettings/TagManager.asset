@@ -8,6 +8,7 @@ TagManager:
   - HealthController
   - Obstacle
   - Enemy
+  - Coin
   layers:
   - Default
   - TransparentFX

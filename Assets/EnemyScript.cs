@@ -8,7 +8,7 @@ public class EnemyScript : AbstractEnemy
     {
         if (collisionObject.gameObject.tag == "Player")
         {
-            target.GetComponent<PlayerScript>().LoseHealth();
+            target.GetComponent<PlayerScript>().ChangeHealth(-1);
         }
     }
 

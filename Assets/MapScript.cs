@@ -7,6 +7,7 @@ public class MapScript : MonoBehaviour
     public GameObject ground;
     public GameObject obstacle;
     public GameObject border;
+    public GameObject coin;
 
     public void Start()
     {
@@ -21,6 +22,8 @@ public class MapScript : MonoBehaviour
                     CreateGameObject(border, new Vector3(j, 1, i));
                 else if (j % 2 == 0 && i % 2 == 0 && i < height - 2 && j < width - 2)
                     CreateGameObject(obstacle, new Vector3(j, 1, i));
+                else if (j % 2 != 0 && i % 2 != 0)
+                    CreateGameObject(coin, new Vector3(j, 1, i));
             }
         }            
     }

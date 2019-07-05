@@ -108,7 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   health: 100
-  healthController: {fileID: 0}
+  isInvincible: 0
+  playerColor: {r: 0.24705884, g: 0.45882356, b: 0.9921569, a: 0}
 --- !u!54 &7811786920577778193
 Rigidbody:
   m_ObjectHideFlags: 0
